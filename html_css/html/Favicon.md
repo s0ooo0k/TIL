@@ -36,4 +36,7 @@
 - favicon의 아이콘을 설정하는 부분 `./faavicon.ico` 뒤에 `?`를 추가한다!
 - 정상 작동 완료!  
   ![정상 이미지](https://i.ibb.co/Lr31ZHB/2025-01-19-044927.png)
-- 25.01.19 기준 TIL을 작성하며 다시 시도해보니 ?를 빼도 재작동하긴한다! Pages 업데이트가 늦게 된 거 같기도 하다. 
+- 25.01.19 기준 TIL을 작성하며 다시 시도해보니 ?를 빼도 재작동하긴한다! Pages 업데이트가 늦게 된 거 같기도 하다.
+
+참고
+https://stackoverflow.com/questions/46163065/github-pages-website-favicon-not-showing
