@@ -5,7 +5,7 @@
 웹 브라우저의 탭, 북마크 등에 표시되는 작은 아이콘
 
 - 예시 : 깃허브의 고양이!  
-  <img src="https://i.ibb.co/ZB4Sfcp/2025-01-19-043535.png" alt="Favicon">
+  ![Favicon](https://i.ibb.co/ZB4Sfcp/2025-01-19-043535.png)
 
 ### Favicon 추가 방법
 
@@ -19,8 +19,6 @@
    	    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
    	    <link rel="manifest" href="./site.webmanifest" />
     </head>
-    ```
-   <br>
    ````
 
 ### <u>Favicon이 안 뜬다 !</u>
@@ -37,5 +35,5 @@
 
 - favicon의 아이콘을 설정하는 부분 `./faavicon.ico` 뒤에 `?`를 추가한다!
 - 정상 작동 완료!  
-  <img src="https://i.ibb.co/Lr31ZHB/2025-01-19-044927.png" alt="2025-01-19-044927" border="0"></a>
+  ![정상 이미지](https://i.ibb.co/Lr31ZHB/2025-01-19-044927.png)
 - 25.01.19 기준 TIL을 작성하며 다시 시도해보니 ?를 빼도 재작동하긴한다! Pages 업데이트가 늦게 된 거 같기도 하다. 
