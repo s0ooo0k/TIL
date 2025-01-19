@@ -15,14 +15,27 @@
 
 <br>
 
-## 📊 카테고리
+## 🔋 기술 스택
+<img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=Django&logoColor=white"> <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white"> <img src="https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=HTML5&logoColor=white"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascrpipt&logoColor=white">  
 
-###### 차차 업데이트 됩니다. . .
-
-- ### CS
-- ### Generative AI
-- ### html & css
 <br>
 
-## 🔋 기술 스택
-<img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=Django&logoColor=white"> <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white"> <img src="https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=HTML5&logoColor=white"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascrpipt&logoColor=white">
+## 📊 카테고리
+###### 차차 업데이트 됩니다. . .
+- ### TIL
+  - [issue 목록을 확인해주세요🚀](https://github.com/s0ooo0k/TIL/issues)
+- ### Generative AI
+  **[ChaGPT]**
+  - [GPT의 기초](https://github.com/s0ooo0k/TIL/blob/main/Generative%20AI/ChatGPT/ChatGPT_basic.md)
+  - [프롬프트 엔지니어링](https://github.com/s0ooo0k/TIL/blob/main/Generative%20AI/ChatGPT/Prompt_Engineering.md)
+  - [RTF 프레임워크](https://github.com/s0ooo0k/TIL/blob/main/Generative%20AI/ChatGPT/RTF_Framewok.md)
+- ### html & css
+  **[html]**
+  - [Emmet과 Emmet Cheet Sheet](https://github.com/s0ooo0k/TIL/blob/main/html_css/html/html_emmet.md)
+  - [Favicon과 Favicon이 안 나오는 에러](https://github.com/s0ooo0k/TIL/blob/main/html_css/html/Favicon.md)
+  - [메타태그, SEO, OG](https://github.com/s0ooo0k/TIL/blob/main/html_css/html/MetaTag_SEO_OG.md)
+- ### CS
+
+<br>
+
+
