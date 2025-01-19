@@ -7,11 +7,11 @@
 VS Code와 같은 코드 에디터에서 `Tab`, `Enter` 키를 활용하여 변환함.
 
 - <b> 예시 1 링크</b> - `a[href=""]`   
-    ```
+    ```html
     <a href=""></a>
     ```
 - <b> 예시 2 리스트 </b> - `ul>li*3`
-    ```
+    ```html
     <ul>
      <li></li>
      <li></li>
@@ -20,7 +20,7 @@ VS Code와 같은 코드 에디터에서 `Tab`, `Enter` 키를 활용하여 변�
     ```
 
 - <b> 예시 3 테이블 </b> - `tr>td*3^tr>td*3` or `(tr>td*3)*2`
-    ```
+    ```html
     <tr>
       <td></td>
       <td></td>
@@ -34,7 +34,7 @@ VS Code와 같은 코드 에디터에서 `Tab`, `Enter` 키를 활용하여 변�
     ```
 
 - <b> 예시 4 html 기본 구조 </b> - `!`
-    ```
+    ```html
     <!DOCTYPE html>
     <html lang="ko">!
     <head>
