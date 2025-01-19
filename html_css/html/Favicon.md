@@ -11,7 +11,7 @@
 
 1. [RealFavicongnerator.net](https://realfavicongenerator.net/) 접속 후 패키지 만들기
 2. `head` 부분에 코드 삽입!
-   ````
+   ````html
    <head>
    	    <link rel="icon" type="image/png" href="./favicon-96x96.png" sizes="96x96" />
    	    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
@@ -29,7 +29,7 @@
 
 #### ⭕ 해결
 
-```
+```html
 <link rel="shortcut icon" href="./favicon.ico?" />
 ```
 
