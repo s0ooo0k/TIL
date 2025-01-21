@@ -25,55 +25,8 @@
 
 ###### 차차 업데이트 됩니다. . .
 
-- ### TIL : [issue 목록을 확인해주세요🚀](https://github.com/s0ooo0k/TIL/issues)
-
-<details>
-  <summary>Generative AI
-  </summary>
-  <details>
-      <summary>
-        <b>ChatGPT</b>
-      </summary>
-      <div markdown="1">
-        - [GPT의 기초](https://github.com/s0ooo0k/TIL/blob/main/Generative%20AI/ChatGPT/ChatGPT_basic.md)
-  - [프롬프트 엔지니어링](https://github.com/s0ooo0k/TIL/blob/main/Generative%20AI/ChatGPT/Prompt_Engineering.md)
-  - [RTF 프레임워크](https://github.com/s0ooo0k/TIL/blob/main/Generative%20AI/ChatGPT/RTF_Framewok.md)
-  </div>
-  </details>
-</div>
-<div>
-<details>
-  <summary>
-    <h3>
-      HTML & CSS
-    </h3>
-  </summary>
-  <details>
-      <summary>
-        <b>HTML</b>
-      </summary>
-      <ul>
-        <li><a href src="https://github.com/s0ooo0k/TIL/blob/main/html_css/html/html_emmet.md">Emmet과 Emmet Cheet Sheet</a>
-        </li>
-        <li><a href src="https://github.com/s0ooo0k/TIL/blob/main/html_css/html/Favicon.md">Favicon과 Favicon이 안 나오는 에러</a>
-        </li>
-        <li><a href src="https://github.com/s0ooo0k/TIL/blob/main/html_css/html/MetaTag_SEO_OG.md">메타태그, SEO, OG</a>
-        </li>
-      </ul>
-      <summary>
-        <b>HTML</b>
-      </summary>
-      <ul>
-        <li><a href src="https://github.com/s0ooo0k/TIL/blob/main/html_css/html/html_emmet.md">Emmet과 Emmet Cheet Sheet</a>
-        </li>
-        <li><a href src="https://github.com/s0ooo0k/TIL/blob/main/html_css/html/Favicon.md">Favicon과 Favicon이 안 나오는 에러</a>
-        </li>
-        <li><a href src="https://github.com/s0ooo0k/TIL/blob/main/html_css/html/MetaTag_SEO_OG.md">메타태그, SEO, OG</a>
-        </li>
-      </ul>
-  </details>
-</div>
-
+- ### TIL
+  - [issue 목록을 확인해주세요🚀](https://github.com/s0ooo0k/TIL/issues)
 - ### Generative AI
   **[ChaGPT]**
   - [GPT의 기초](https://github.com/s0ooo0k/TIL/blob/main/Generative%20AI/ChatGPT/ChatGPT_basic.md)
