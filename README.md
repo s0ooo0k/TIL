@@ -16,21 +16,25 @@
 <br>
 
 ## 🔋 기술 스택
-<img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=Django&logoColor=white"> <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white"> <img src="https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=HTML5&logoColor=white"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascrpipt&logoColor=white">  
+
+<img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=Django&logoColor=white"> <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white"> <img src="https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=HTML5&logoColor=white"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascrpipt&logoColor=white">
 
 <br>
 
 ## 📊 카테고리
+
 ###### 차차 업데이트 됩니다. . .
-<h3>TIL </h3> <a href src="https://github.com/s0ooo0k/TIL/issues">issue 목록을 확인해주세요🚀</a>
+
+<h3>TIL </h3> 
+<a href src="https://github.com/s0ooo0k/TIL/issues">issue 목록을 확인해주세요🚀</a>
+<div>
 <details>
   <summary>
     <h3>
       Generative AI
     </h3>
   </summary>
-  <div>
-    <details>
+  <details>
       <summary>
         <b>ChatGPT</b>
       </summary>
@@ -43,18 +47,38 @@
         </li>
       </ul>
   </details>
-  </div>
-  
-
-      
-  
-- ### html & css
-  **[html]**
-  - [Emmet과 Emmet Cheet Sheet](https://github.com/s0ooo0k/TIL/blob/main/html_css/html/html_emmet.md)
-  - [Favicon과 Favicon이 안 나오는 에러](https://github.com/s0ooo0k/TIL/blob/main/html_css/html/Favicon.md)
-  - [메타태그, SEO, OG](https://github.com/s0ooo0k/TIL/blob/main/html_css/html/MetaTag_SEO_OG.md)
-- ### CS
+</div>
+<div>
+<details>
+  <summary>
+    <h3>
+      HTML & CSS
+    </h3>
+  </summary>
+  <details>
+      <summary>
+        <b>HTML</b>
+      </summary>
+      <ul>
+        <li><a href src="https://github.com/s0ooo0k/TIL/blob/main/html_css/html/html_emmet.md">Emmet과 Emmet Cheet Sheet</a>
+        </li>
+        <li><a href src="https://github.com/s0ooo0k/TIL/blob/main/html_css/html/Favicon.md">Favicon과 Favicon이 안 나오는 에러</a>
+        </li>
+        <li><a href src="https://github.com/s0ooo0k/TIL/blob/main/html_css/html/MetaTag_SEO_OG.md">메타태그, SEO, OG</a>
+        </li>
+      </ul>
+      <summary>
+        <b>HTML</b>
+      </summary>
+      <ul>
+        <li><a href src="https://github.com/s0ooo0k/TIL/blob/main/html_css/html/html_emmet.md">Emmet과 Emmet Cheet Sheet</a>
+        </li>
+        <li><a href src="https://github.com/s0ooo0k/TIL/blob/main/html_css/html/Favicon.md">Favicon과 Favicon이 안 나오는 에러</a>
+        </li>
+        <li><a href src="https://github.com/s0ooo0k/TIL/blob/main/html_css/html/MetaTag_SEO_OG.md">메타태그, SEO, OG</a>
+        </li>
+      </ul>
+  </details>
+</div>
 
 <br>
-
-
