@@ -22,7 +22,7 @@
 
 ## 📊 카테고리
 ###### 차차 업데이트 됩니다. . .
-<h3>TIL </h3> - [issue 목록을 확인해주세요🚀](https://github.com/s0ooo0k/TIL/issues)
+<h3>TIL </h3> - <a href src="https://github.com/s0ooo0k/TIL/issues">issue 목록을 확인해주세요🚀</a>
 <details>
   <summary>
     <h3>
