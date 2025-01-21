@@ -25,30 +25,20 @@
 
 ###### 차차 업데이트 됩니다. . .
 
-- ### TIL
-  - [issue 목록을 확인해주세요🚀](https://github.com/s0ooo0k/TIL/issues)
+- ### TIL : [issue 목록을 확인해주세요🚀](https://github.com/s0ooo0k/TIL/issues)
 
-<h3>TIL </h3> 
-<a href src="https://github.com/s0ooo0k/TIL/issues">issue 목록을 확인해주세요🚀</a>
-<div>
 <details>
-  <summary>
-    <h3>
-      Generative AI
-    </h3>
+  <summary>Generative AI
   </summary>
   <details>
       <summary>
         <b>ChatGPT</b>
       </summary>
-      <ul>
-        <li><a href src="https://github.com/s0ooo0k/TIL/blob/main/Generative%20AI/ChatGPT/ChatGPT_basic.md">GPT의 기초</a>
-        </li>
-        <li><a href src="https://github.com/s0ooo0k/TIL/blob/main/Generative%20AI/ChatGPT/Prompt_Engineering.md">프롬프트 엔지니어링</a>
-        </li>
-        <li><a href src="https://github.com/s0ooo0k/TIL/blob/main/Generative%20AI/ChatGPT/RTF_Framewok.md">RTF 프레임워크</a>
-        </li>
-      </ul>
+      <div markdown="1">
+        - [GPT의 기초](https://github.com/s0ooo0k/TIL/blob/main/Generative%20AI/ChatGPT/ChatGPT_basic.md)
+  - [프롬프트 엔지니어링](https://github.com/s0ooo0k/TIL/blob/main/Generative%20AI/ChatGPT/Prompt_Engineering.md)
+  - [RTF 프레임워크](https://github.com/s0ooo0k/TIL/blob/main/Generative%20AI/ChatGPT/RTF_Framewok.md)
+  </div>
   </details>
 </div>
 <div>
