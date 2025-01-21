@@ -22,13 +22,32 @@
 
 ## 📊 카테고리
 ###### 차차 업데이트 됩니다. . .
-- ### TIL
-  - [issue 목록을 확인해주세요🚀](https://github.com/s0ooo0k/TIL/issues)
-- ### Generative AI
-  **[ChaGPT]**
-  - [GPT의 기초](https://github.com/s0ooo0k/TIL/blob/main/Generative%20AI/ChatGPT/ChatGPT_basic.md)
-  - [프롬프트 엔지니어링](https://github.com/s0ooo0k/TIL/blob/main/Generative%20AI/ChatGPT/Prompt_Engineering.md)
-  - [RTF 프레임워크](https://github.com/s0ooo0k/TIL/blob/main/Generative%20AI/ChatGPT/RTF_Framewok.md)
+<h3>TIL </h3> - [issue 목록을 확인해주세요🚀](https://github.com/s0ooo0k/TIL/issues)
+<details>
+  <summary>
+    <h3>
+      Generative AI
+    </h3>
+  </summary>
+  <div>
+    <details>
+      <summary>
+        <b>ChatGPT</b>
+      </summary>
+      <ul>
+        <li><a href src="https://github.com/s0ooo0k/TIL/blob/main/Generative%20AI/ChatGPT/ChatGPT_basic.md">GPT의 기초</a>
+        </li>
+        <li><a href src="https://github.com/s0ooo0k/TIL/blob/main/Generative%20AI/ChatGPT/Prompt_Engineering.md">프롬프트 엔지니어링</a>
+        </li>
+        <li><a href src="https://github.com/s0ooo0k/TIL/blob/main/Generative%20AI/ChatGPT/RTF_Framewok.md">RTF 프레임워크</a>
+        </li>
+      </ul>
+  </details>
+  </div>
+  
+
+      
+  
 - ### html & css
   **[html]**
   - [Emmet과 Emmet Cheet Sheet](https://github.com/s0ooo0k/TIL/blob/main/html_css/html/html_emmet.md)
