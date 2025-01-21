@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox Layout with Vertical and Horizontal Alignment</title>
+    <style>
+      /* 전체 페이지 스타일 */
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+      }
+
+      /* 컨테이너 스타일 */
+      .container {
+        display: flex; /* Flexbox 활성화 */
+        flex-direction: column; /* 주축을 세로로 설정 */
+        justify-content: center; /* 세로 정렬: 중앙 */
+        align-items: center; /* 가로 정렬: 중앙 */
+        padding: 20px;
+        margin: 30px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      /* 텍스트 박스 스타일 */
+      .text {
+        margin-bottom: 20px; /* 아이템과 간격 */
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333;
+      }
+
+      /* 아이템 컨테이너 */
+      .items {
+        display: flex; /* 내부 아이템은 가로 정렬 */
+        flex-direction: row; /* 주축을 가로로 설정 */
+        justify-content: space-around; /* 아이템 간 간격 균등 분배 */
+        align-items: center; /* 교차축 정렬: 중앙 */
+        width: 100%;
+      }
+      .items2 {
+        display: flex; /* 내부 아이템은 가로 정렬 */
+        flex-direction: row; /* 주축을 가로로 설정 */
+        justify-content: space-between;
+        align-items: center; /* 교차축 정렬: 중앙 */
+        width: 100%;
+      }
+      .items3 {
+        display: flex; /* 내부 아이템은 가로 정렬 */
+        flex-direction: row; /* 주축을 가로로 설정 */
+        justify-content: space-evenly;
+        align-items: center; /* 교차축 정렬: 중앙 */
+        width: 100%;
+      }
+
+      /* 아이템 스타일 */
+      .item {
+        width: 150px;
+        height: 150px;
+        background-color: #b3d3f5;
+        color: white;
+        display: flex; /* Flexbox 활성화 */
+        justify-content: center; /* 가로 정렬 */
+        align-items: center; /* 세로 정렬 */
+        border-radius: 10px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        text-align: center; /* 텍스트 가운데 정렬 */
+      }
+
+      /* 반응형 디자인 */
+      @media (max-width: 768px) {
+        .items {
+          flex-direction: column; /* 작은 화면에서는 세로 배치 */
+        }
+        .item {
+          width: 80%;
+          margin-bottom: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="text">Space around test</div>
+      <div class="items">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+      </div>
+    </div>
+    <div class="container" style="background-color: antiquewhite">
+      <div class="text">space between test</div>
+      <div class="items2">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+      </div>
+    </div>
+    <div class="container" style="background-color: rgb(212, 180, 216)">
+      <div class="text">space between test</div>
+      <div class="items3">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+      </div>
+    </div>
+  </body>
+</html>

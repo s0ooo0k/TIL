@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box-sizing</title>
+  </head>
+  <style>
+    .content-box-test {
+      box-sizing: cotent-box;
+      width: 200px;
+      padding: 20px;
+      border: 10px solid black;
+    }
+    .border-box-test {
+      box-sizing: border-box;
+      width: 200px;
+      padding: 20px;
+      border: 10px solid blue;
+    }
+  </style>
+  <body>
+    <div class="content-box-test">CONTENT BOX</div>
+    <br />
+    <div class="border-box-test">BORDER BOX</div>
+  </body>
+</html>

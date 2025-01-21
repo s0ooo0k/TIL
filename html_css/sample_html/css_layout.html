@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Layout 테스트</title>
+    <style>
+      /* 기본 스타일 */
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      /* 헤더 (Fixed Position) */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #574964;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        z-index: 10;
+      }
+
+      /* 컨테이너 */
+      .container {
+        margin: 70px auto 0; /* 헤더 높이 고려 */
+        max-width: 1200px;
+        padding: 20px;
+      }
+
+      /* 사이드바와 콘텐츠 래퍼 */
+      .wrapper {
+        display: flex;
+        gap: 20px;
+      }
+
+      /* 사이드바 (Sticky) */
+      .sidebar {
+        position: sticky;
+        top: 70px; /* 스크롤 시 70px 아래에서 고정 */
+        width: 25%;
+        background-color: #C8AAAA;
+        padding: 15px;
+        height: 300px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      /* 메인 콘텐츠 */
+      .content {
+        flex: 1;
+        background-color: #dacab9;
+        padding: 15px;
+        border: 1px solid #ddd;
+        position: relative; /* Absolute 배치 기준 */
+      }
+      /* 메인 콘텐츠 이미지 */
+      .cotent-img {
+        float: right;
+        width: 300px;
+      }
+      /* 메인 콘텐츠 내부 박스 (Absolute) */
+      .absolute-box {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 150px;
+        padding: 10px;
+        background-color: #9F8383;
+        border: 1px solid #b67f7b;
+        text-align: center;
+      }
+
+      /* 푸터 */
+      footer {
+        margin-top: 20px;
+        background-color: #574964;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 고정된 헤더 -->
+    <header>
+      <h1>💡CSS Layout 테스트</h1>
+    </header>
+
+    <!-- 메인 컨테이너 -->
+    <div class="container">
+      <div class="wrapper">
+        <!-- 사이드바 (Sticky) -->
+        <aside class="sidebar">
+          <h3>스크롤 따라오는 Sidebar</h3>
+          <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+          </ul>
+        </aside>
+
+        <!-- 메인 콘텐츠 -->
+        <main class="content">
+          <h2>Main Content</h2>
+          <img src="./layout.png" class="cotent-img" alt="layout img" />
+            <b>
+                This is the main content area. The sticky sidebar remains in place
+                while scrolling. The red box inside this section is absolutely positioned relative to
+                the content. 
+            </b> 
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id aliquid
+            quam in quaerat quod doloremque cumque tenetur, dolores est
+            architecto explicabo eveniet. Qui modi inventore voluptatem
+            corrupti? Eaque, praesentium autem! Delectus, vel, molestiae ad
+            illum quos quasi iusto dolore in laudantium quisquam consectetur
+            voluptatum cupiditate nemo blanditiis hic? Reprehenderit,
+            reiciendis. Vel ut ipsa quidem non exercitationem dolorem quod,
+            mollitia accusamus? Nobis nulla eius velit, ipsum consequatur
+            quisquam animi fuga voluptas odio. Debitis, repellat libero
+            cupiditate quibusdam aliquam harum repellendus ab molestias maiores
+            totam doloribus perferendis cumque eveniet voluptatum quia
+            similique. Sit minima quibusdam, libero quis harum iusto repudiandae
+            quia adipisci mollitia laboriosam recusandae eos dolore asperiores
+            eius, quas, rem magnam totam perferendis culpa dolores cum itaque
+            laborum! Corrupti, distinctio sed? Nam eum facilis iure ipsum, enim
+            eos id fugiat perferendis. Veritatis dignissimos quo ipsum incidunt
+            id eum alias voluptas esse suscipit ullam, eius illo earum
+            temporibus optio rem, nemo dolores. Delectus porro sunt eum illo
+            soluta itaque veniam, officiis voluptates voluptatem nihil ullam ex
+            assumenda, mollitia ratione labore nostrum aspernatur repellendus et
+            vitae nam tenetur placeat! Earum ipsam architecto modi. Nemo
+            doloremque, quos commodi officiis amet officia esse necessitatibus
+            est maiores corrupti, cumque rem ullam fugit at harum dolore
+            voluptatibus eos deleniti aperiam? Ex sapiente cum nobis esse
+            tenetur ea. Nemo neque sit assumenda recusandae illum quasi minus ab
+            quaerat? Recusandae cupiditate sequi, suscipit vero sed id quae. Id
+            quaerat similique illum nostrum eveniet. Ducimus aut at natus
+            repellat aperiam? Pariatur eligendi sed atque quisquam quaerat,
+            delectus soluta ipsa distinctio totam repudiandae libero vitae iusto
+            quidem natus modi ea amet error aliquam. Doloremque facilis animi
+            laboriosam, ex magni ad. Iusto. Architecto voluptatem harum cumque
+            eligendi necessitatibus qui et beatae, deserunt provident ex
+            consectetur eveniet dolorem quisquam molestiae commodi, nostrum
+            ullam officiis, error eius dolor. Fuga velit nostrum libero debitis
+            est.
+          </p>
+
+          <!-- Absolute 박스 -->
+          <div class="absolute-box">Absolute Box</div>
+        </main>
+      </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer>
+      <p>&copy; 2025 Advanced CSS Layout</p>
+    </footer>
+  </body>
+</html>
