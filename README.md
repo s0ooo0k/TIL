@@ -25,6 +25,9 @@
 
 ###### 차차 업데이트 됩니다. . .
 
+- ### TIL
+  - [issue 목록을 확인해주세요🚀](https://github.com/s0ooo0k/TIL/issues)
+
 <h3>TIL </h3> 
 <a href src="https://github.com/s0ooo0k/TIL/issues">issue 목록을 확인해주세요🚀</a>
 <div>
@@ -80,5 +83,17 @@
       </ul>
   </details>
 </div>
+
+- ### Generative AI
+  **[ChaGPT]**
+  - [GPT의 기초](https://github.com/s0ooo0k/TIL/blob/main/Generative%20AI/ChatGPT/ChatGPT_basic.md)
+  - [프롬프트 엔지니어링](https://github.com/s0ooo0k/TIL/blob/main/Generative%20AI/ChatGPT/Prompt_Engineering.md)
+  - [RTF 프레임워크](https://github.com/s0ooo0k/TIL/blob/main/Generative%20AI/ChatGPT/RTF_Framewok.md)
+- ### html & css
+  **[html]**
+  - [Emmet과 Emmet Cheet Sheet](https://github.com/s0ooo0k/TIL/blob/main/html_css/html/html_emmet.md)
+  - [Favicon과 Favicon이 안 나오는 에러](https://github.com/s0ooo0k/TIL/blob/main/html_css/html/Favicon.md)
+  - [메타태그, SEO, OG](https://github.com/s0ooo0k/TIL/blob/main/html_css/html/MetaTag_SEO_OG.md)
+- ### CS
 
 <br>
