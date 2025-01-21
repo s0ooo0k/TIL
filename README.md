@@ -34,11 +34,20 @@
   - [GPT의 기초](https://github.com/s0ooo0k/TIL/blob/main/Generative%20AI/ChatGPT/ChatGPT_basic.md)
   - [프롬프트 엔지니어링](https://github.com/s0ooo0k/TIL/blob/main/Generative%20AI/ChatGPT/Prompt_Engineering.md)
   - [RTF 프레임워크](https://github.com/s0ooo0k/TIL/blob/main/Generative%20AI/ChatGPT/RTF_Framewok.md)
-- ### html & css
+- ### HTML & CSS 
   **[html]**
   - [Emmet과 Emmet Cheet Sheet](https://github.com/s0ooo0k/TIL/blob/main/html_css/html/html_emmet.md)
   - [Favicon과 Favicon이 안 나오는 에러](https://github.com/s0ooo0k/TIL/blob/main/html_css/html/Favicon.md)
   - [메타태그, SEO, OG](https://github.com/s0ooo0k/TIL/blob/main/html_css/html/MetaTag_SEO_OG.md)
+ 
+  **[CSS]**
+  - [css 기초](https://github.com/s0ooo0k/TIL/blob/main/html_css/css/css_basic.md) & [상속과 Cascading](https://github.com/s0ooo0k/TIL/blob/main/html_css/css/cascading.md)
+  - [선택자(Selector)](https://github.com/s0ooo0k/TIL/blob/main/html_css/css/selector.md)
+  - [box model과 마진병합](https://github.com/s0ooo0k/TIL/blob/main/html_css/css/box_model.md)
+  - CSS Layout 시리즈
+      1. [Float](https://github.com/s0ooo0k/TIL/blob/main/html_css/css/layout_float.md)
+      2. [Position](https://github.com/s0ooo0k/TIL/blob/main/html_css/css/layout_position.md)
+      3. [Flex](https://github.com/s0ooo0k/TIL/blob/main/html_css/css/layout_flex.md)
 - ### CS
-
+ - [Programming Case Style](https://github.com/s0ooo0k/TIL/blob/main/CS/Case_Style.md)
 <br>
