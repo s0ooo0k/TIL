@@ -26,7 +26,9 @@
 ###### 차차 업데이트 됩니다. . .
 
 - ### TIL
+
   - [issue 목록을 확인해주세요🚀](https://github.com/s0ooo0k/TIL/issues)
+
 - ### Generative AI
   **[ChaGPT]**
   - [GPT의 기초](https://github.com/s0ooo0k/TIL/blob/main/Generative%20AI/ChatGPT/ChatGPT_basic.md)
