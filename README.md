@@ -49,5 +49,5 @@
       2. [Position](https://github.com/s0ooo0k/TIL/blob/main/html_css/css/layout_position.md)
       3. [Flex](https://github.com/s0ooo0k/TIL/blob/main/html_css/css/layout_flex.md)
 - ### CS
- - [Programming Case Style](https://github.com/s0ooo0k/TIL/blob/main/CS/Case_Style.md)
+   - [Programming Case Style](https://github.com/s0ooo0k/TIL/blob/main/CS/Case_Style.md)
 <br>
