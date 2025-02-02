@@ -9,8 +9,9 @@
 ## 객체
 
 - 관련된 데이터, 메서드의 집합
-- 프로퍼티(Property)는 객체의 특성, 속성
-
+- 프로퍼티(Property)는 객체의 특성, 속성  
+  => 순서가 중요한 경우, 배열을 사용해야 된다!  
+    es6+ 이후로 문자열 프로퍼티 하에서 어느정도의 순서 보장이 되나, 확신할 수 없음.
 ```javascript
 const person = {
   name: "Alice", // name: 키(key), "Alice": 값(value)

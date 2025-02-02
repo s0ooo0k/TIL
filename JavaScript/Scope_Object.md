@@ -83,7 +83,7 @@ console.log(double(5)); // num=5 출력 : 10
 
 ### 예시
 
-1. 기본적인 클로저저
+1. 기본적인 클로저
 
 ```javascript
 function outer(outerVar) {
