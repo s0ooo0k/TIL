@@ -30,11 +30,11 @@
 - ### TIL | 주간 회고 | 월간 회고
   [issue 목록을 확인해주세요🚀](https://github.com/s0ooo0k/TIL/issues)
 
-- ### Generative AI
-  **[ChaGPT]**
-  - [GPT의 기초](https://github.com/s0ooo0k/TIL/blob/main/Generative%20AI/ChatGPT/ChatGPT_basic.md)
-  - [프롬프트 엔지니어링](https://github.com/s0ooo0k/TIL/blob/main/Generative%20AI/ChatGPT/Prompt_Engineering.md)
-  - [RTF 프레임워크](https://github.com/s0ooo0k/TIL/blob/main/Generative%20AI/ChatGPT/RTF_Framewok.md)
+- ### JavaScript
+  **[기본 문법]**
+  - [자바스크립트 기본 문법 폴](https://github.com/s0ooo0k/TIL/tree/main/JavaScript/basic_syntax)
+  **[웹]**
+  - [DOM](https://github.com/s0ooo0k/TIL/blob/main/JavaScript/web/DOM.md)
 - ### HTML & CSS 
   **[html]**
   - [Emmet과 Emmet Cheet Sheet](https://github.com/s0ooo0k/TIL/blob/main/html_css/html/html_emmet.md)
@@ -51,4 +51,10 @@
       3. [Flex](https://github.com/s0ooo0k/TIL/blob/main/html_css/css/layout_flex.md)
 - ### CS
    - [Programming Case Style](https://github.com/s0ooo0k/TIL/blob/main/CS/Case_Style.md)
+
+- ### Generative AI
+  **[ChaGPT]**
+  - [GPT의 기초](https://github.com/s0ooo0k/TIL/blob/main/Generative%20AI/ChatGPT/ChatGPT_basic.md)
+  - [프롬프트 엔지니어링](https://github.com/s0ooo0k/TIL/blob/main/Generative%20AI/ChatGPT/Prompt_Engineering.md)
+  - [RTF 프레임워크](https://github.com/s0ooo0k/TIL/blob/main/Generative%20AI/ChatGPT/RTF_Framewok.md)
 <br>
