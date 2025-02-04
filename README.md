@@ -31,10 +31,11 @@
   [issue 목록을 확인해주세요🚀](https://github.com/s0ooo0k/TIL/issues)
 
 - ### JavaScript
-  **[기본 문법]**
-  - [자바스크립트 기본 문법 폴](https://github.com/s0ooo0k/TIL/tree/main/JavaScript/basic_syntax)
-  **[웹]**
+  **[기본 문법]**  
+  - [자바스크립트 기본 문법 폴](https://github.com/s0ooo0k/TIL/tree/main/JavaScript/basic_syntax)  
+  **[웹]**  
   - [DOM](https://github.com/s0ooo0k/TIL/blob/main/JavaScript/web/DOM.md)
+  
 - ### HTML & CSS 
   **[html]**
   - [Emmet과 Emmet Cheet Sheet](https://github.com/s0ooo0k/TIL/blob/main/html_css/html/html_emmet.md)
