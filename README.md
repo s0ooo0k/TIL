@@ -32,7 +32,14 @@
 
 - ### JavaScript
   **[기본 문법]**  
-  - [자바스크립트 기본 문법 폴](https://github.com/s0ooo0k/TIL/tree/main/JavaScript/basic_syntax)  
+  - [JavaScript 기본 문법](https://github.com/s0ooo0k/TIL/blob/main/JavaScript/basic_syntax/basic.md)
+  - [객체, 함수, 메서드](https://github.com/s0ooo0k/TIL/blob/main/JavaScript/basic_syntax/Function_Method.md) &  [클래스](https://github.com/s0ooo0k/TIL/blob/main/JavaScript/basic_syntax/Class.md)
+  - [배열, Map, Set](https://github.com/s0ooo0k/TIL/blob/main/JavaScript/basic_syntax/Array_Map_Set.md)
+  - [호이스팅](https://github.com/s0ooo0k/TIL/blob/main/JavaScript/basic_syntax/Hoisting.md)
+  - [스코프와 일급 객체, 클로저](https://github.com/s0ooo0k/TIL/blob/main/JavaScript/basic_syntax/Hoisting.md)
+  - [고차함수](https://github.com/s0ooo0k/TIL/blob/main/JavaScript/basic_syntax/Highorder_Function.md) & [구조 분해 할당](https://github.com/s0ooo0k/TIL/blob/main/JavaScript/basic_syntax/destructuring_assignment.md)
+  - [예외 처리](https://github.com/s0ooo0k/TIL/blob/main/JavaScript/basic_syntax/trycatch_throw.md)
+    
   **[웹]**  
   - [DOM](https://github.com/s0ooo0k/TIL/blob/main/JavaScript/web/DOM.md)
   
