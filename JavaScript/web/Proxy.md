@@ -33,7 +33,7 @@ const proxyObj = new Proxy(obj, {
     return true; // 반드시 true를 반환해야 정상 동작
   },
 });
-// 값 읽음음(get 동작)
+// 값 읽음(get 동작)
 console.log(proxyObj.name);
 // 값 변경(set 동작)
 proxyObj.age = 30;
@@ -47,7 +47,7 @@ age 값을 30로 변경했습니다.
 
 #### 예제 - 메모장
 
-Proxy`를 사용함으로 `data` 배열이 변경될 때마다(set) 실행
+`Proxy`를 사용함으로 `data` 배열이 변경될 때마다(set) 실행
 
 ```javascript
 const data = new Proxy([], {
