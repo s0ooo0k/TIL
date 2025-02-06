@@ -4,7 +4,7 @@
 
 ###### _\*2025 Programmers 생성형 AI Backend DevCources 1회차 과정을 수강하며 배운 내용을 기반으로 작성됩니다_
 
-<b> [TIL Viewer](https://s0ooo0k.github.io/TIL/)를 통해 TIL 내용을 확인할 수 있습니다. </b>
+### 🚀 [TIL 한눈에 모아보기](https://s0ooo0k.github.io/TIL/) 🧑🏼‍🚀 </b>
 
 ![Image](https://github.com/user-attachments/assets/ee78b1bb-4b03-4eb3-b6cc-2ce61edd6c28)
 
@@ -42,7 +42,7 @@
   - [스코프와 일급 객체, 클로저](https://github.com/s0ooo0k/TIL/blob/main/JavaScript/basic_syntax/Hoisting.md)
   - [고차함수](https://github.com/s0ooo0k/TIL/blob/main/JavaScript/basic_syntax/Highorder_Function.md) & [구조 분해 할당](https://github.com/s0ooo0k/TIL/blob/main/JavaScript/basic_syntax/destructuring_assignment.md)
   - [예외 처리](https://github.com/s0ooo0k/TIL/blob/main/JavaScript/basic_syntax/trycatch_throw.md)
-  **[웹]**
+    **[웹]**
   - [DOM](https://github.com/s0ooo0k/TIL/blob/main/JavaScript/web/DOM.md)
 - ### HTML & CSS
 
