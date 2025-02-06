@@ -1,21 +1,129 @@
+/* 폰트 */
+.noto-sans-kr-basic {
+  font-family: "Noto Sans KR", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.roboto-basic {
+  font-family: "Roboto", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+.archivo-narrow-basic {
+  font-family: "Archivo Narrow", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.kumar-one-regular {
+  font-family: "Kumar One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* General Styles */
 body {
-  background-color: #f8f9fa;
-  font-family: Arial, sans-serif;
+  background-color: #e3e3e4;
+  font-family: "Noto Sans KR", serif;
+  color: #212529;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
 }
 
 h1 {
-  font-weight: bold;
+  font-family: "Noto Sans KR", serif;
+  font-weight: 700;
   color: #343a40;
+  text-align: center;
+}
+
+p {
+  color: #495057;
+  font-size: 1rem;
 }
 
 /* Issue Cards */
 .card {
-  border: 1px solid #e9ecef;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
 }
 
 .card:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title a {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #3a3a3a;
+  text-decoration: none;
+}
+
+.card-title a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #6c757d;
+}
+
+/* Issue Details Page */
+#issue-title {
+  font-family: "Noto Sans KR", serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #343a40;
+}
+
+#issue-body {
+  font-family: "Noto Sans KR", serif;
+  font-size: 1rem;
+  color: #495057;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* GitHub Link Button */
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+  .card-body {
+    font-family: "Noto Sans KR", serif;
+    padding: 1rem;
+  }
+  .card-title a {
+    font-family: "Noto Sans KR", serif;
+    font-size: 1rem;
+  }
+  .btn-primary {
+    width: 100%;
+  }
 }

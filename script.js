@@ -24,15 +24,10 @@ async function fetchGitHubIssues() {
       issueCard.innerHTML = `
           <div class="card-body">
             <h5 class="card-title">
-              <a href="issue.html?issueId=${
-                issue.number
-              }" class="text-decoration-none">${issue.title}</a>
+              <a href="issue.html?issueId=${issue.number}" class="text-decoration-none">
+                📝 ${issue.title}
+              </a>
             </h5>
-            <p class="card-text">${
-              issue.body
-                ? issue.body.substring(0, 200) + "..."
-                : "No description provided."
-            }</p>
           </div>
         `;
 

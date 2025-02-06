@@ -19,3 +19,9 @@ const proxyObj = new Proxy(obj, {
 console.log(proxyObj.name);
 // 값 변경(set 동작)
 proxyObj.age = 30;
+
+/* 출력
+name 값을 읽었습니다
+sook
+age 값을 30로 변경했습니다.
+*/
