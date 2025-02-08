@@ -110,3 +110,25 @@ B;
   - Call Stack이 비어있는지 확인
   - 마이크로태스크 큐 실행
   - 매크로태스크 큐 실행
+
+---
+
+### 정리
+
+**1️⃣ 콜 스택(Call Stack)**
+실행할 동기 코드(즉시 실행되는 코드)를 순서대로 쌓고 실행함.
+실행이 끝난 함수는 콜 스택에서 제거됨.
+
+**2️⃣ 비동기 함수 실행 (setTimeout(), Promise.then())**
+비동기 함수(setTimeout(), fetch(), Promise.then())가 실행되면,
+→ 콜 스택에서 제거되고,
+→ Web API에서 실행을 기다림.
+
+**3️⃣ 완료된 비동기 함수는 큐에 저장됨**
+Promise.then(), queueMicrotask() → 마이크로태스크 큐(Microtask Queue)
+setTimeout(), setInterval() → 매크로태스크 큐(Macrotask Queue)
+
+**4️⃣ 이벤트 루프(Event Loop)가 실행 순서를 결정**
+콜 스택이 비어있으면, 이벤트 루프가 실행됨.
+마이크로태스크 큐(Microtask Queue)부터 실행
+마이크로태스크가 모두 끝나면 매크로태스크 큐 실행
