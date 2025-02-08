@@ -102,3 +102,9 @@ async function handleSubmit() {
 1. paymentWidge.requestPayment()는 비동기 함수, 즉시 실행X
 2. `await` 사용으로 paymentWidge.requestPayment()의 응답이 올때까지 `handleSubmit()` 실행이 멈춤
 3. paymentData가 성공적으로 반환되면, console.log 실행
+
+---
+
+[Reference]
+
+- [@토스 페이먼트 | 예제로 이해하는 await async 문법](https://velog.io/@tosspayments/%EC%98%88%EC%A0%9C%EB%A1%9C-%EC%9D%B4%ED%95%B4%ED%95%98%EB%8A%94-awaitasync-%EB%AC%B8%EB%B2%95)

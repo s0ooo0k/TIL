@@ -1,10 +1,11 @@
-function data(callback) {
-  setTimeout(() => {
-    console.log("데이터 로드 완료");
-    callback();
-  }, 2000);
-}
-function proData() {
-  console.log("데이터 처리 중");
-}
-data(proData);
+console.log("A");
+
+setTimeout(() => {
+  console.log("B");
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log("C");
+});
+
+console.log("D");
