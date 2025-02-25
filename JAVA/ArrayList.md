@@ -7,9 +7,8 @@
 - 원시 타입(`int`, `double`)은 직접 저장 불가 -> Wrapper 클래스(`Integer`, `Double` 등) 사용
 
 ```java
-import java.util.ArrayList;
-ArrayList<String> list = new ArrayList<>();
-ArrayList<Integer> numbers = new ArrayList<>();
+List<String> list = new ArrayList<>();
+List<Integer> numbers = new ArrayList<>();
 ```
 
 ## ArraList 메서드
