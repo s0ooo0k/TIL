@@ -33,6 +33,10 @@
 
   [issue 목록을 확인해주세요🚀](https://github.com/s0ooo0k/TIL/issues)
 
+- ### Java
+  - [배열 및 배열 복사](https://github.com/s0ooo0k/TIL/blob/main/JAVA/Arrays.md)
+  - [StringBuffer](https://github.com/s0ooo0k/TIL/blob/main/JAVA/StringBuffer.md)
+
 - ### JavaScript
   **[기본 문법]**
   - [JavaScript 기본 문법](https://github.com/s0ooo0k/TIL/blob/main/JavaScript/basic_syntax/basic.md)
@@ -41,7 +45,7 @@
   - [호이스팅](https://github.com/s0ooo0k/TIL/blob/main/JavaScript/basic_syntax/Hoisting.md)
   - [스코프와 일급 객체, 클로저](https://github.com/s0ooo0k/TIL/blob/main/JavaScript/basic_syntax/Hoisting.md)
   - [고차함수](https://github.com/s0ooo0k/TIL/blob/main/JavaScript/basic_syntax/Highorder_Function.md) & [구조 분해 할당](https://github.com/s0ooo0k/TIL/blob/main/JavaScript/basic_syntax/destructuring_assignment.md)
-  - [예외 처리](https://github.com/s0ooo0k/TIL/blob/main/JavaScript/basic_syntax/trycatch_throw.md)
+  - [예외 처리](https://github.com/s0ooo0k/TIL/blob/main/JavaScript/basic_syntax/trycatch_throw.md)     
     **[웹]**
   - [DOM](https://github.com/s0ooo0k/TIL/blob/main/JavaScript/web/DOM.md)
 - ### HTML & CSS
