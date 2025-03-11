@@ -75,3 +75,36 @@
   <%! int i=0; %>
   ```
   JSP 실행 시 1번만 초기화됨
+
+## JSP 파일 경로를 숨기는 이유와 방식
+
+- 파일 경로 노출 시 서버 구조, 운영체제 종류 등이 공개될 위험
+- 서버 설정이 잘못될 경우 JSP 코드가 그대로 노출될 수 있음
+- JSP 파일이 직접 노출되면, 유지 보수가 어렵다(파일명이 변경될 때마다 클라이언트 측에서도 URL 변경이 필요함)
+
+**위와 같은 보안적인 이유에서, jsp 파일 경로를 숨기는 것은 중요하다!**
+
+### 숨기는 방식
+
+1. MVC(Model, View, Controller) 패턴 활용
+   ![Image](https://github.com/user-attachments/assets/212bcd15-1a47-43f4-b289-ccdbc8811580)
+
+   - 사용자가 URL을 통해 애플리케이션에 요청을 보내면, Controller 역할을 하는 Servlet으로 전달. (사용자는 Servlet URL만 알고 있다)
+   - Servlet은 모델과 상호작용하여 요청을 처리하고, 데이터를 준비한다
+   - `RequestDispatcher > forward()` 혹은 `sendDirect()` 메서드를 사용해 JSP로 제어를 넘긴다
+
+2. URL 매핑
+   - 실제 경로가 아닌 논리적 URL을 사용하여 Servlet, Controller와 연결하는 방식
+   - web.xml, 어노테이션, 프레임워크를 사용해서 매핑할 수 있다
+
+```java
+// 어노테이션 기반 매핑
+@WebServlet("/test")
+public class UserServlet extends HttpServ {
+
+}
+```
+
+3. WEB-INF 사용하기
+   - WEB-INF의 경우, 외부에서 `http://test.com/WEB-INF/`와 같은 외부 URL로 직접 접근할 수 없다!
+   - 따라서 JSP나 Dotenv와 같은 중요 파일을 해당 경로에 넣어 배치하면 보안을 강화할 수 있다
