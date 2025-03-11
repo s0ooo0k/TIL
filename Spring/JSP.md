@@ -87,7 +87,8 @@
 ### 숨기는 방식
 
 1. MVC(Model, View, Controller) 패턴 활용
-   ![Image](https://github.com/user-attachments/assets/212bcd15-1a47-43f4-b289-ccdbc8811580)
+   ![image](https://github.com/user-attachments/assets/f7ba099b-dc6d-4958-92cc-115f348b6834)
+
 
    - 사용자가 URL을 통해 애플리케이션에 요청을 보내면, Controller 역할을 하는 Servlet으로 전달. (사용자는 Servlet URL만 알고 있다)
    - Servlet은 모델과 상호작용하여 요청을 처리하고, 데이터를 준비한다
