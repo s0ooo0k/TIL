@@ -12,14 +12,15 @@ Servlet에서 Spring으로 넘어가는데, Controller, Service, Repositiory 등
 [사용자] ← [DispatcherServlet] ← [Controller] ← [Service] ← [Repository] ← [DB]
 ```
 
-1️⃣ 클라이언트(유저) : 브라우저에서 URL 요청(/search 와 같이 API 호출)
-2️⃣ DispatcherServlet : Spring의 핵심 컨트롤러가 요청을 받아 적절한 컨트롤러로 넘김
-3️⃣ `Controller` : `@RestController`, `@Controller`에서 요청을 처리하고 service 호출
-4️⃣ `Service` : 비즈니스 로직을 수행하고, `Repository`를 호출하여 DB와 연결
-5️⃣ `Repository` : JPA, JDBC 등을 사용하여 데이터베이스(DB)에서 데이터를 가져옴
-6️⃣ Service에서 Controller로 응답 반환
-7️⃣ Controller에서 DispatcherServlet
-8️⃣ DispatcherServlet에서 클라이언트 응답 반환
+1️⃣ 클라이언트(유저) : 브라우저에서 URL 요청(/search 와 같이 API 호출)    
+2️⃣ DispatcherServlet : Spring의 핵심 컨트롤러가 요청을 받아 적절한 컨트롤러로 넘김    
+3️⃣ `Controller` : `@RestController`, `@Controller`에서 요청을 처리하고 service 호출    
+4️⃣ `Service` : 비즈니스 로직을 수행하고, `Repository`를 호출하여 DB와 연결    
+5️⃣ `Repository` : JPA, JDBC 등을 사용하여 데이터베이스(DB)에서 데이터를 가져옴   
+6️⃣ Service에서 Controller로 응답 반환   
+7️⃣ Controller에서 DispatcherServlet   
+8️⃣ DispatcherServlet에서 클라이언트 응답 반환   
+   
 
 ## 2. Spring MVC 패턴과 프로젝트 구조
 
