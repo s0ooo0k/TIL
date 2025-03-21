@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta property="og:title" content="Spring MVC 패턴" />
+    <meta
+      property="og:description"
+      content="Spring MVC의 흐름과 구조를 한눈에 보기 쉽게 정리한 인포그래픽입니다."
+    />
+    <meta
+      property="og:image"
+      content="https://github.com/user-attachments/assets/aaf0b555-109f-4e77-b317-ed75fe355c99"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ko_KR" />
+    <title>🔍 Spring MVC 패턴</title>
+    <style>
+      @font-face {
+        font-family: "Pretendard-Regular";
+        src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+          format("woff");
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Pretendard-Regular", sans-serif;
+      }
+
+      body {
+        background-color: #f5f9ff;
+        color: #333;
+        padding: 20px;
+      }
+
+      .infographic {
+        max-width: 1000px;
+        margin: 0 auto;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 100, 0.1);
+        padding: 30px;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #e0e9ff;
+      }
+
+      h1 {
+        color: #1a56db;
+        font-size: 32px;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        color: #2563eb;
+        font-size: 24px;
+        margin: 25px 0 15px;
+      }
+
+      h3 {
+        color: #3b82f6;
+        font-size: 20px;
+        margin: 20px 0 10px;
+      }
+
+      .section {
+        margin-bottom: 40px;
+      }
+
+      .flow-diagram {
+        background-color: #edf2ff;
+        border-radius: 8px;
+        padding: 30px;
+        margin: 20px 0;
+        position: relative;
+      }
+
+      .flow-steps {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .flow-row {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .flow-row:last-child {
+        margin-bottom: 0;
+      }
+
+      .arrow-down {
+        height: 30px;
+        color: #3b82f6;
+        font-size: 24px;
+        text-align: center;
+      }
+
+      .component {
+        background-color: white;
+        border: 2px solid #bfdbfe;
+        border-radius: 8px;
+        padding: 15px;
+        text-align: center;
+        min-width: 140px;
+        margin: 0 10px;
+        position: relative;
+      }
+
+      .component.highlight {
+        border-color: #3b82f6;
+        background-color: #dbeafe;
+        font-weight: bold;
+        box-shadow: 0 3px 8px rgba(59, 130, 246, 0.2);
+      }
+
+      .component.db {
+        background-color: #eff6ff;
+        border-color: #93c5fd;
+      }
+
+      .component-number {
+        position: absolute;
+        top: -12px;
+        left: -12px;
+        background-color: #3b82f6;
+        color: white;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+      }
+
+      .arrow {
+        flex: 1;
+        height: 2px;
+        background-color: #93c5fd;
+        position: relative;
+        max-width: 60px;
+      }
+
+      .arrow::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: -4px;
+        width: 0;
+        height: 0;
+        border-left: 8px solid #93c5fd;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+      }
+
+      .mvc-structure {
+        display: flex;
+        justify-content: space-between;
+        margin: 30px 0;
+      }
+
+      .mvc-box {
+        flex: 1;
+        background-color: #eff6ff;
+        border: 2px solid #bfdbfe;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 0 10px;
+        cursor: pointer;
+        transition: box-shadow 0.3s;
+      }
+
+      .mvc-box.open .box-content {
+        display: block;
+        animation: fadeIn 0.3s ease-in-out;
+      }
+
+      .box-content {
+        display: none;
+        margin-top: 10px;
+      }
+
+      .mvc-box:hover {
+        background-color: #5c6fac88;
+        box-shadow: 0 4px 12px rgba(49, 72, 109, 0.1);
+      }
+
+      .mvc-box h3 {
+        text-align: center;
+        margin-bottom: 15px;
+        color: #1e40af;
+      }
+
+      .mvc-box ul {
+        padding-left: 20px;
+      }
+
+      .mvc-box li {
+        margin-bottom: 10px;
+      }
+
+      .mvc-box code {
+        background-color: #dbeafe;
+        padding: 2px 5px;
+        border-radius: 4px;
+        font-family: monospace;
+        font-size: 14px;
+      }
+
+      .design-steps {
+        background-color: #eff6ff;
+        border-radius: 8px;
+        padding: 25px;
+        counter-reset: step;
+      }
+
+      .design-step {
+        position: relative;
+        padding-left: 45px;
+        margin-bottom: 15px;
+        min-height: 35px;
+        display: flex;
+        align-items: center;
+      }
+
+      .design-step:last-child {
+        margin-bottom: 0;
+      }
+
+      .design-step::before {
+        counter-increment: step;
+        content: counter(step);
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #3b82f6;
+        color: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: 30px;
+        color: #6b7280;
+        font-size: 14px;
+      }
+      .flow-description {
+        background-color: #f0f4ff;
+        border-left: 6px solid #3b82f6;
+        padding: 20px 25px;
+        border-radius: 8px;
+        margin-top: 20px;
+        box-shadow: 0 2px 5px rgba(59, 130, 246, 0.1);
+      }
+
+      .flow-description p {
+        font-weight: bold;
+        font-size: 16px;
+        margin-bottom: 10px;
+        color: #1d4ed8;
+      }
+
+      .flow-description ol {
+        padding-left: 20px;
+      }
+
+      .flow-description li {
+        margin-bottom: 8px;
+        line-height: 1.6;
+      }
+      .step-key {
+        font-weight: bold;
+        color: #2563eb; /* 파란색 */
+        margin-right: 5px;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-5px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="infographic">
+      <div class="header">
+        <h1>Spring MVC 패턴 인포그래픽</h1>
+        <p>Servlet에서 Spring으로 넘어가는 MVC 패턴과 프로젝트 구조 이해하기</p>
+      </div>
+
+      <div class="section">
+        <h2>1. Spring MVC 동작 흐름</h2>
+        <div class="flow-diagram">
+          <div class="flow-steps">
+            <div class="flow-row">
+              <div class="component" id="user">
+                <div class="component-number">1</div>
+                사용자
+              </div>
+              <div class="arrow"></div>
+              <div class="component highlight" id="dispatcher">
+                <div class="component-number">2</div>
+                <p style="font-size: 14px">DispatcherServlet</p>
+              </div>
+              <div class="arrow"></div>
+              <div class="component highlight" id="controller">
+                <div class="component-number">3</div>
+                Controller
+              </div>
+              <div class="arrow"></div>
+              <div class="component highlight" id="service">
+                <div class="component-number">4</div>
+                Service
+              </div>
+              <div class="arrow"></div>
+              <div class="component highlight" id="repository">
+                <div class="component-number">5</div>
+                Repository
+              </div>
+              <div class="arrow"></div>
+              <div class="component db" id="db">
+                <div class="component-number">6</div>
+                DB
+              </div>
+            </div>
+            <div class="flow-row">
+              <div
+                style="width: 100%; display: flex; justify-content: flex-end"
+              >
+                <div class="arrow-down">↓</div>
+              </div>
+            </div>
+            <div class="flow-row">
+              <div class="component" id="user-return">
+                <div class="component-number">12</div>
+                사용자
+              </div>
+              <div class="arrow" style="transform: rotate(180deg)"></div>
+              <div class="component highlight" id="dispatcher-return">
+                <div class="component-number">11</div>
+                <p style="font-size: 14px">DispatcherServlet</p>
+              </div>
+              <div class="arrow" style="transform: rotate(180deg)"></div>
+              <div class="component highlight" id="controller-return">
+                <div class="component-number">10</div>
+                Controller
+              </div>
+              <div class="arrow" style="transform: rotate(180deg)"></div>
+              <div class="component highlight" id="service-return">
+                <div class="component-number">9</div>
+                Service
+              </div>
+              <div class="arrow" style="transform: rotate(180deg)"></div>
+              <div class="component highlight" id="repository-return">
+                <div class="component-number">8</div>
+                Repository
+              </div>
+              <div class="arrow" style="transform: rotate(180deg)"></div>
+              <div class="component db" id="db-return">
+                <div class="component-number">7</div>
+                DB
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flow-description">
+          <p><strong>동작 설명:</strong></p>
+          <ol>
+            <li>
+              클라이언트(유저): 브라우저에서 URL 요청(/search 와 같이 API 호출)
+            </li>
+            <li>
+              DispatcherServlet: Spring의 핵심 컨트롤러가 요청을 받아 적절한
+              컨트롤러로 넘김
+            </li>
+            <li>
+              <span class="step-key">Controller</span>:
+              <code>@RestController</code>, <code>@Controller</code>에서 요청을
+              처리하고 service 호출
+            </li>
+            <li>
+              <span class="step-key">Service</span>: 비즈니스 로직을 수행하고,
+              Repository를 호출하여 DB와 연결
+            </li>
+            <li>
+              <span class="step-key">Repository</span>: JPA, JDBC 등을 사용하여
+              데이터베이스(DB)에서 데이터를 가져옴
+            </li>
+            <li>Service에서 Controller로 응답 반환</li>
+            <li>Controller에서 DispatcherServlet</li>
+            <li>DispatcherServlet에서 클라이언트 응답 반환</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>2. Spring MVC 패턴과 프로젝트 구조 (Click!)</h2>
+        <div class="mvc-structure">
+          <div class="mvc-box" onclick="toggleBox(this)">
+            <h3>Model</h3>
+            <div class="box-content">
+              <p>데이터베이스와 연결하는 부분</p>
+              <ul>
+                <li><code>DTO</code>: 클라이언트에 반환할 데이터</li>
+                <li><code>Entity</code>: 데이터베이스 테이블과 매핑</li>
+                <li><code>Repository</code>: 데이터 액세스 계층</li>
+              </ul>
+            </div>
+          </div>
+          <div class="mvc-box" onclick="toggleBox(this)">
+            <h3>View</h3>
+            <div class="box-content">
+              <p>사용자에게 보여줄 화면</p>
+              <ul>
+                <li>Thymeleaf 템플릿</li>
+                <li>JSP 페이지</li>
+                <li>REST API (JSON 응답)</li>
+              </ul>
+            </div>
+          </div>
+          <div class="mvc-box" onclick="toggleBox(this)">
+            <h3>Controller</h3>
+            <div class="box-content">
+              <p>사용자 요청을 받고 응답을 반환</p>
+              <ul>
+                <li><code>@RestController</code></li>
+                <li><code>@GetMapping</code></li>
+                <li><code>@PostMapping</code></li>
+                <li><code>@RequestBody</code></li>
+                <li><code>@ResponseBody</code></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>3. 프로젝트 설계 방식</h2>
+        <div class="design-steps">
+          <div class="design-step">요구사항 분석 → 어떤 기능을 만들지 정리</div>
+          <div class="design-step">
+            엔티티(Entity) 설계 → DB 테이블 정의 → <code>@Entity</code>로 매핑
+          </div>
+          <div class="design-step">
+            DTO 정의 → 클라이언트에게 보낼 데이터 구조 →
+            <code>UserDTO.java</code>
+          </div>
+          <div class="design-step">
+            Repository 작성 → JPA 활용 데이터베이스 연결
+          </div>
+          <div class="design-step">Service 작성 → 핵심 비즈니스 로직 구성</div>
+          <div class="design-step">
+            Controller 작성 → 요청 받아 서비스 호출 후 응답 반환
+          </div>
+          <div class="design-step">
+            예외 처리 → Spring에서 <code>@ExceptionHandler</code> 사용
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>© 2025 Spring MVC 패턴 인포그래픽 - 스프링 입문자를 위한 가이드</p>
+      </div>
+    </div>
+    <script>
+      function toggleBox(element) {
+        element.classList.toggle("open");
+      }
+    </script>
+  </body>
+</html>
