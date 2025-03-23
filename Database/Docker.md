@@ -58,3 +58,37 @@ CMD ["node", "index.js"]
 - 애플리케이션과 그 실행 환경을 패키징한 템플릿과 같다
 - 도커파일을 빌드하여 생성
 - 하나의 이미지는 불변이고, 이미지를 이용해 여러 컨테이너를 생성할 수 있다
+
+## Docker 기본 명령어
+1. `docker run`
+- 컨테이너를 처음부터 실행할 때 사용하는 명령어
+```bash
+docker run [옵션] 이미지명[:버전]
+```
+- 예시
+```bash
+docker run -d -p 3306:3306 --name my-mysql -e MYSQL_ROOT_PASSWORD=1234 mysql:8
+```
+- `-d` : detach. 백그라운드에서 실행
+- `-p` : 포트 매핑
+- `--name` : 컨테이너 이름 지정
+- `-e` : 환경 변수 설정
+- `mysql:8` : 사용할 이미지
+
+
+
+2. `docker ps`
+- 현재 실행중인 컨테이너 목록 보기
+- `docker ps -a` : 중지된 컨테이너까지 포함해서 모두 보기
+
+3. `docker exec`
+- 실행 중인 컨테이너 안에서 명령어 실행하기
+```bash
+docker exec -it 컨테이너 명령어
+```
+- 예시
+```bash
+docker exec -it my-mysql bash
+```
+- `-it` : 대화형 모드 (터미널 처럼 사용)
+- `bash` : 리눅스 쉘을 실행(컨테이너 안으로 들어감)
