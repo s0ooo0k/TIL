@@ -19,9 +19,9 @@
       }
 
       .container {
-        max-width: 1500px;
+        max-width: 1000px;
         margin: 0 auto;
-        padding: 20px;
+        padding: 15px;
       }
 
       header {
@@ -69,7 +69,7 @@
       }
 
       .card-header {
-        padding: 15px;
+        padding: 10px;
         background-color: #2575fc;
         color: white;
         font-weight: bold;
@@ -79,7 +79,7 @@
       }
 
       .card-body {
-        padding: 30px;
+        padding: 20px;
       }
 
       .icon {
@@ -129,7 +129,7 @@
 
       .qa-section {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 20px;
       }
       .qa-card {
@@ -318,7 +318,6 @@
       .rest-process {
         display: flex;
         justify-content: space-between;
-        margin: 30px 0;
         flex-wrap: wrap;
       }
 
@@ -564,46 +563,41 @@
           클라이언트 간의 통신을 단순하고 일관되게 만드는 아키텍처 스타일
         </p>
       </header>
-
-      <div class="grid">
-        <div class="card">
-          <div class="card-header">
-            <span class="icon">🔍</span>
-            REST 기본 개념
-          </div>
-          <div class="card-body">
-            <p>
-              <span class="highlight">REST</span>는 Representational State
-              Transfer의 약자로 자원 기반 설계 방식입니다.
-            </p>
-            <ul>
-              <li>
-                <strong>Stateless (무상태)</strong> - 각 요청은 독립적이며 이전
-                요청과 무관
-              </li>
-              <li>
-                <strong>Cacheable</strong> - 응답은 캐시 가능하여 네트워크
-                효율성 향상
-              </li>
-              <li>
-                <strong>Client-Server 구조</strong> - 클라이언트와 서버의 명확한
-                분리
-              </li>
-              <li>
-                <strong>Uniform Interface</strong> - 일관된 인터페이스로
-                상호작용
-              </li>
-              <li>
-                <strong>Layered System</strong> - 계층적 구조로 확장성 확보
-              </li>
-            </ul>
-            <p style="margin-top: 15px">
-              <strong>RESTful API</strong>는 이러한 REST 원칙을 충실히 따르는
-              API를 의미합니다.
-            </p>
-          </div>
+      <div class="card">
+        <div class="card-header">
+          <span class="icon">🔍</span>
+          REST 기본 개념
         </div>
-
+        <div class="card-body">
+          <p>
+            <span class="highlight">REST</span>는 Representational State
+            Transfer의 약자로 자원 기반 설계 방식입니다.
+          </p>
+          <ul>
+            <li>
+              <strong>Stateless (무상태)</strong> - 각 요청은 독립적이며 이전
+              요청과 무관
+            </li>
+            <li>
+              <strong>Cacheable</strong> - 응답은 캐시 가능하여 네트워크 효율성
+              향상
+            </li>
+            <li>
+              <strong>Client-Server 구조</strong> - 클라이언트와 서버의 명확한
+              분리
+            </li>
+            <li>
+              <strong>Uniform Interface</strong> - 일관된 인터페이스로 상호작용
+            </li>
+            <li><strong>Layered System</strong> - 계층적 구조로 확장성 확보</li>
+          </ul>
+          <p style="margin-top: 15px">
+            <strong>RESTful API</strong>는 이러한 REST 원칙을 충실히 따르는
+            API를 의미합니다.
+          </p>
+        </div>
+      </div>
+      <div class="grid">
         <div class="card">
           <div class="card-header">
             <span class="icon">🧩</span>
@@ -754,7 +748,7 @@
           <span class="icon">🔄</span>
           REST API 통신 프로세스
         </div>
-        <div class="card-body">
+        <div class="card-body" style="padding: 14px; word-break: keep-all">
           <div class="rest-process">
             <div class="process-step">
               <div class="step-number">1</div>
@@ -785,7 +779,7 @@
           </div>
 
           <div class="diagram">
-            <svg width="100%" height="250" viewBox="0 0 800 250">
+            <svg width="80%" height="200" viewBox="0 0 800 250">
               <!-- 클라이언트 -->
               <rect
                 x="50"
@@ -1220,8 +1214,7 @@
               </div>
               <div class="qa-answer">
                 REST API는 REST 아키텍처 스타일을 따르는 API이며, RESTful API는
-                이를 좀 더 엄격하게 지킨 이상적인 구현입니다. <br />
-                <p style="color: #2196f3">[CLICK]</p>
+                이를 좀 더 엄격하게 지킨 이상적인 구현입니다.
               </div>
             </div>
 
