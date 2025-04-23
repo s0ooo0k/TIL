@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>REST API in a Nutshell</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: #f7f9fc;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      header {
+        text-align: center;
+        padding: 30px 0;
+        background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+        color: white;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+
+      .subtitle {
+        font-size: 1.2rem;
+        font-weight: 300;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.5;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 25px;
+        margin-bottom: 30px;
+        margin-top: 10px;
+      }
+
+      .card {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .card-header {
+        padding: 15px;
+        background-color: #2575fc;
+        color: white;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .card-body {
+        padding: 30px;
+      }
+
+      .icon {
+        font-size: 1.5rem;
+      }
+
+      ul {
+        list-style-position: inside;
+        padding-left: 10px;
+        margin-top: 10px;
+      }
+
+      li {
+        margin-bottom: 8px;
+        padding-left: 5px;
+      }
+
+      .highlight {
+        background-color: #fffde7;
+        padding: 2px 5px;
+        border-radius: 3px;
+        font-weight: 500;
+      }
+
+      .code {
+        font-family: "Courier New", monospace;
+        background-color: #f5f5f5;
+        padding: 2px 5px;
+        border-radius: 3px;
+        color: #e91e63;
+      }
+
+      .interview-section {
+        background-color: white;
+        border-radius: 10px;
+        padding: 25px;
+        margin-top: 30px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .interview-title {
+        font-size: 1.8rem;
+        color: #2575fc;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .qa-section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 20px;
+      }
+      .qa-card {
+        background: #e4e6e77e;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+      }
+      .qa-card:hover {
+        transform: translateY(-5px);
+      }
+      .qa-card .qa-question {
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 10px;
+      }
+      .qa-card .qa-answer {
+        display: none;
+        font-style: italic;
+        color: #444;
+        margin-top: 10px;
+      }
+      .qa-card.active .qa-answer {
+        display: block;
+      }
+      .qa-item {
+        border-left: 4px solid #2575fc;
+        padding-left: 15px;
+        margin-bottom: 20px;
+      }
+
+      .question {
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .answer {
+        color: #555;
+        font-style: italic;
+      }
+
+      .method-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 15px 0;
+      }
+
+      .method-table th,
+      .method-table td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+      }
+
+      .method-table th {
+        background-color: #f5f5f5;
+      }
+
+      .method-tag {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        min-width: 80px;
+      }
+
+      .get {
+        background-color: #4caf50;
+      }
+      .post {
+        background-color: #2196f3;
+      }
+      .put {
+        background-color: #ff9800;
+      }
+      .delete {
+        background-color: #f44336;
+      }
+      .patch {
+        background-color: #9c27b0;
+      }
+
+      .collapsible {
+        background-color: #f1f1f1;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 16px;
+        font-weight: bold;
+        transition: 0.4s;
+        border-radius: 5px;
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .active,
+      .collapsible:hover {
+        background-color: #e1e1e1;
+      }
+
+      .content {
+        padding: 0 18px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        background-color: white;
+        border-radius: 0 0 5px 5px;
+      }
+
+      .collapsible:after {
+        content: "\002B";
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+      }
+
+      .active:after {
+        content: "\2212";
+      }
+
+      .status-code {
+        display: inline-block;
+        width: 60px;
+        padding: 3px 6px;
+        border-radius: 3px;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        margin-right: 10px;
+      }
+
+      .success {
+        background-color: #4caf50;
+      }
+      .redirect {
+        background-color: #ff9800;
+      }
+      .client-error {
+        background-color: #f44336;
+      }
+      .server-error {
+        background-color: #9c27b0;
+      }
+
+      .diagram {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px 0;
+        text-align: center;
+      }
+
+      .rest-vs-others {
+        display: flex;
+        margin-top: 15px;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .compare-item {
+        flex: 1;
+        min-width: 250px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        padding: 15px;
+      }
+
+      .compare-title {
+        font-weight: bold;
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        border-bottom: 2px solid #2575fc;
+      }
+
+      .rest-process {
+        display: flex;
+        justify-content: space-between;
+        margin: 30px 0;
+        flex-wrap: wrap;
+      }
+
+      .process-step {
+        flex: 1;
+        min-width: 150px;
+        text-align: center;
+        padding: 20px 10px;
+        background-color: #f5f5f5;
+        border-radius: 10px;
+        margin: 0 5px 10px;
+        position: relative;
+      }
+
+      .step-number {
+        width: 30px;
+        height: 30px;
+        background-color: #2575fc;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 10px;
+        font-weight: bold;
+      }
+
+      .process-arrow {
+        position: absolute;
+        right: -10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #2575fc;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+        border-radius: 5px 5px 0 0;
+      }
+
+      .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 16px;
+      }
+
+      .tab button:hover {
+        background-color: #ddd;
+      }
+
+      .tab button.active {
+        background-color: #2575fc;
+        color: white;
+      }
+
+      .tabcontent {
+        display: none;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-top: none;
+        border-radius: 0 0 5px 5px;
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 50px;
+        padding: 20px;
+        color: #666;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 768px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        .card {
+          margin-bottom: 20px;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        .rest-process {
+          flex-direction: column;
+        }
+
+        .process-step {
+          margin-bottom: 30px;
+        }
+
+        .process-arrow {
+          right: 50%;
+          top: auto;
+          bottom: -25px;
+          transform: translateX(50%) rotate(90deg);
+        }
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Collapsible toggle
+        const collapsibles = document.querySelectorAll(".collapsible");
+        collapsibles.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            this.classList.toggle("active");
+            const content = this.nextElementSibling;
+            if (content.style.maxHeight) {
+              content.style.maxHeight = null;
+            } else {
+              content.style.maxHeight = content.scrollHeight + "px";
+            }
+          });
+        });
+
+        // Tab toggle
+        function openTab(evt, tabName) {
+          const tabcontent = document.getElementsByClassName("tabcontent");
+          for (let i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          const tablinks = document.getElementsByClassName("tablinks");
+          for (let i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(
+              " active",
+              ""
+            );
+          }
+          document.getElementById(tabName).style.display = "block";
+          evt.currentTarget.className += " active";
+
+          const qaCards = document.querySelectorAll(".qa-card");
+          qaCards.forEach((card) => {
+            card.addEventListener("click", () => {
+              card.classList.toggle("active");
+            });
+          });
+        }
+        window.openTab = openTab;
+        document.getElementById("defaultOpen")?.click();
+      });
+    </script>
+  </head>
+  <body>
+    <!-- <nav
+      style="
+        background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%);
+        padding: 15px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      "
+    >
+      <div
+        class="container"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <div style="display: flex; align-items: center">
+          <span style="color: white; font-size: 1.5rem; font-weight: bold"
+            >웹 개발 가이드</span
+          >
+        </div>
+        <div style="display: flex; gap: 20px">
+          <a
+            href="index.html"
+            style="
+              color: white;
+              text-decoration: none;
+              padding: 8px 15px;
+              border-radius: 5px;
+              transition: all 0.3s ease;
+            "
+            >홈</a
+          >
+          <a
+            href="#"
+            style="
+              color: white;
+              text-decoration: none;
+              padding: 8px 15px;
+              border-radius: 5px;
+              background-color: rgba(255, 255, 255, 0.2);
+              transition: all 0.3s ease;
+            "
+            >REST API</a
+          >
+          <a
+            href="mvc.html"
+            style="
+              color: white;
+              text-decoration: none;
+              padding: 8px 15px;
+              border-radius: 5px;
+              transition: all 0.3s ease;
+            "
+            >MVC 패턴</a
+          >
+          <a
+            href="#"
+            style="
+              color: white;
+              text-decoration: none;
+              padding: 8px 15px;
+              border-radius: 5px;
+              transition: all 0.3s ease;
+            "
+            >자료구조</a
+          >
+          <a
+            href="#"
+            style="
+              color: white;
+              text-decoration: none;
+              padding: 8px 15px;
+              border-radius: 5px;
+              transition: all 0.3s ease;
+            "
+            >알고리즘</a
+          >
+        </div>
+      </div>
+    </nav> -->
+    <div class="container">
+      <header>
+        <h1>REST API in a Nutshell</h1>
+        <p class="subtitle">
+          웹 자원을 URI로 표현하고, HTTP 메서드로 행위를 정의하여 서버와
+          클라이언트 간의 통신을 단순하고 일관되게 만드는 아키텍처 스타일
+        </p>
+      </header>
+
+      <div class="grid">
+        <div class="card">
+          <div class="card-header">
+            <span class="icon">🔍</span>
+            REST 기본 개념
+          </div>
+          <div class="card-body">
+            <p>
+              <span class="highlight">REST</span>는 Representational State
+              Transfer의 약자로 자원 기반 설계 방식입니다.
+            </p>
+            <ul>
+              <li>
+                <strong>Stateless (무상태)</strong> - 각 요청은 독립적이며 이전
+                요청과 무관
+              </li>
+              <li>
+                <strong>Cacheable</strong> - 응답은 캐시 가능하여 네트워크
+                효율성 향상
+              </li>
+              <li>
+                <strong>Client-Server 구조</strong> - 클라이언트와 서버의 명확한
+                분리
+              </li>
+              <li>
+                <strong>Uniform Interface</strong> - 일관된 인터페이스로
+                상호작용
+              </li>
+              <li>
+                <strong>Layered System</strong> - 계층적 구조로 확장성 확보
+              </li>
+            </ul>
+            <p style="margin-top: 15px">
+              <strong>RESTful API</strong>는 이러한 REST 원칙을 충실히 따르는
+              API를 의미합니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="icon">🧩</span>
+            구성 요소
+          </div>
+          <div class="card-body">
+            <ol>
+              <li>
+                <strong>URI (자원)</strong>
+                <p>
+                  명사형으로 자원을 표현: <span class="code">/users/1</span>,
+                  <span class="code">/products</span>
+                </p>
+              </li>
+              <li>
+                <strong>HTTP 메서드 (행위)</strong>
+                <table class="method-table">
+                  <tr>
+                    <th>메서드</th>
+                    <th>의미</th>
+                    <th>예시</th>
+                  </tr>
+                  <tr>
+                    <td><span class="method-tag get">GET</span></td>
+                    <td>조회</td>
+                    <td><span class="code">GET /users/1</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="method-tag post">POST</span></td>
+                    <td>생성</td>
+                    <td><span class="code">POST /users</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="method-tag put">PUT</span></td>
+                    <td>수정(전체)</td>
+                    <td><span class="code">PUT /users/1</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="method-tag patch">PATCH</span></td>
+                    <td>수정(일부)</td>
+                    <td><span class="code">PATCH /users/1</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="method-tag delete">DELETE</span></td>
+                    <td>삭제</td>
+                    <td><span class="code">DELETE /users/1</span></td>
+                  </tr>
+                </table>
+              </li>
+              <li>
+                <strong>Representation</strong>
+                <p>주로 JSON 또는 XML 형식으로 데이터 전달</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="icon">🔢</span>
+            HTTP 상태 코드
+          </div>
+          <div class="card-body">
+            <button class="collapsible">2xx - 성공 응답</button>
+            <div class="content">
+              <ul>
+                <li>
+                  <span class="status-code success">200</span> OK - 요청 성공
+                </li>
+                <li>
+                  <span class="status-code success">201</span> Created - 리소스
+                  생성 성공
+                </li>
+                <li>
+                  <span class="status-code success">204</span> No Content -
+                  성공했지만 반환할 내용 없음
+                </li>
+              </ul>
+            </div>
+
+            <button class="collapsible">3xx - 리다이렉션</button>
+            <div class="content">
+              <ul>
+                <li>
+                  <span class="status-code redirect">301</span> Moved
+                  Permanently - 영구 이동
+                </li>
+                <li>
+                  <span class="status-code redirect">302</span> Found - 임시
+                  이동
+                </li>
+                <li>
+                  <span class="status-code redirect">304</span> Not Modified -
+                  캐시 사용
+                </li>
+              </ul>
+            </div>
+
+            <button class="collapsible">4xx - 클라이언트 오류</button>
+            <div class="content">
+              <ul>
+                <li>
+                  <span class="status-code client-error">400</span> Bad Request
+                  - 잘못된 요청
+                </li>
+                <li>
+                  <span class="status-code client-error">401</span> Unauthorized
+                  - 인증 필요
+                </li>
+                <li>
+                  <span class="status-code client-error">403</span> Forbidden -
+                  권한 없음
+                </li>
+                <li>
+                  <span class="status-code client-error">404</span> Not Found -
+                  리소스 없음
+                </li>
+                <li>
+                  <span class="status-code client-error">409</span> Conflict -
+                  충돌
+                </li>
+              </ul>
+            </div>
+
+            <button class="collapsible">5xx - 서버 오류</button>
+            <div class="content">
+              <ul>
+                <li>
+                  <span class="status-code server-error">500</span> Internal
+                  Server Error - 서버 내부 오류
+                </li>
+                <li>
+                  <span class="status-code server-error">502</span> Bad Gateway
+                  - 게이트웨이 오류
+                </li>
+                <li>
+                  <span class="status-code server-error">503</span> Service
+                  Unavailable - 서비스 이용 불가
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="icon">🔄</span>
+          REST API 통신 프로세스
+        </div>
+        <div class="card-body">
+          <div class="rest-process">
+            <div class="process-step">
+              <div class="step-number">1</div>
+              <h4>클라이언트 요청</h4>
+              <p>HTTP 메서드 + URI + 헤더 + 본문(선택)</p>
+              <span class="process-arrow">➡</span>
+            </div>
+
+            <div class="process-step">
+              <div class="step-number">2</div>
+              <h4>서버 처리</h4>
+              <p>인증 → 권한 → 유효성 검사 → 비즈니스 로직</p>
+              <span class="process-arrow">➡</span>
+            </div>
+
+            <div class="process-step">
+              <div class="step-number">3</div>
+              <h4>응답 생성</h4>
+              <p>상태 코드 + 헤더 + 본문(JSON/XML)</p>
+              <span class="process-arrow">➡</span>
+            </div>
+
+            <div class="process-step">
+              <div class="step-number">4</div>
+              <h4>클라이언트 수신</h4>
+              <p>상태 코드 확인 → 데이터 처리 → UI 업데이트</p>
+            </div>
+          </div>
+
+          <div class="diagram">
+            <svg width="100%" height="250" viewBox="0 0 800 250">
+              <!-- 클라이언트 -->
+              <rect
+                x="50"
+                y="75"
+                width="150"
+                height="100"
+                rx="10"
+                fill="#6a11cb"
+              />
+              <text
+                x="125"
+                y="130"
+                text-anchor="middle"
+                fill="white"
+                font-weight="bold"
+              >
+                클라이언트
+              </text>
+
+              <!-- 서버 -->
+              <rect
+                x="600"
+                y="75"
+                width="150"
+                height="100"
+                rx="10"
+                fill="#2575fc"
+              />
+              <text
+                x="675"
+                y="130"
+                text-anchor="middle"
+                fill="white"
+                font-weight="bold"
+              >
+                서버
+              </text>
+
+              <!-- 요청 화살표 -->
+              <line
+                x1="200"
+                y1="100"
+                x2="600"
+                y2="100"
+                stroke="#333"
+                stroke-width="2"
+              />
+              <polygon points="590,95 600,100 590,105" fill="#333" />
+              <text x="400" y="90" text-anchor="middle" fill="#333">
+                HTTP 요청
+              </text>
+              <text
+                x="400"
+                y="110"
+                text-anchor="middle"
+                fill="#333"
+                font-size="12"
+              >
+                GET /users/1
+              </text>
+
+              <!-- 응답 화살표 -->
+              <line
+                x1="600"
+                y1="150"
+                x2="200"
+                y2="150"
+                stroke="#333"
+                stroke-width="2"
+              />
+              <polygon points="210,145 200,150 210,155" fill="#333" />
+              <text x="400" y="140" text-anchor="middle" fill="#333">
+                HTTP 응답
+              </text>
+              <text
+                x="400"
+                y="160"
+                text-anchor="middle"
+                fill="#333"
+                font-size="12"
+              >
+                200 OK + JSON
+              </text>
+
+              <!-- JSON 예시 -->
+              <rect
+                x="300"
+                y="180"
+                width="200"
+                height="80"
+                rx="5"
+                fill="#f5f5f5"
+                stroke="#ddd"
+              />
+              <text
+                x="310"
+                y="200"
+                fill="#333"
+                font-family="monospace"
+                font-size="12"
+              >
+                {
+              </text>
+              <text
+                x="320"
+                y="215"
+                fill="#333"
+                font-family="monospace"
+                font-size="12"
+              >
+                "id": 1,
+              </text>
+              <text
+                x="320"
+                y="230"
+                fill="#333"
+                font-family="monospace"
+                font-size="12"
+              >
+                "name": "홍길동"
+              </text>
+              <text
+                x="310"
+                y="245"
+                fill="#333"
+                font-family="monospace"
+                font-size="12"
+              >
+                }
+              </text>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <div class="card-header">
+            <span class="icon">🍃</span>
+            Spring REST 구현
+          </div>
+          <div class="card-body">
+            <p>
+              Spring Framework에서는 어노테이션 기반으로 RESTful API를 쉽게
+              구현할 수 있습니다.
+            </p>
+
+            <div class="tab">
+              <button
+                class="tablinks"
+                onclick="openTab(event, 'Annotations')"
+                id="defaultOpen"
+              >
+                어노테이션
+              </button>
+              <button class="tablinks" onclick="openTab(event, 'Structure')">
+                계층 구조
+              </button>
+              <button class="tablinks" onclick="openTab(event, 'SampleCode')">
+                샘플 코드
+              </button>
+            </div>
+
+            <div id="Annotations" class="tabcontent">
+              <ul>
+                <li>
+                  <span class="code">@RestController</span> - REST 컨트롤러 선언
+                </li>
+                <li>
+                  <span class="code">@RequestMapping</span> - 요청 경로 매핑
+                </li>
+                <li>
+                  <span class="code">@GetMapping</span>,
+                  <span class="code">@PostMapping</span> 등 - HTTP 메서드별 매핑
+                </li>
+                <li><span class="code">@PathVariable</span> - URI 경로 변수</li>
+                <li>
+                  <span class="code">@RequestBody</span> - 요청 본문 바인딩
+                </li>
+                <li>
+                  <span class="code">@ResponseEntity</span> - 응답 엔티티
+                  커스터마이징
+                </li>
+                <li>
+                  <span class="code">@Valid</span> - 요청 데이터 유효성 검증
+                </li>
+                <li>
+                  <span class="code">@ControllerAdvice</span> - 전역 예외 처리
+                </li>
+              </ul>
+            </div>
+
+            <div id="Structure" class="tabcontent">
+              <div class="diagram">
+                <svg width="100%" height="300" viewBox="0 0 600 300">
+                  <!-- 계층 구조 다이어그램 -->
+                  <rect
+                    x="200"
+                    y="30"
+                    width="200"
+                    height="50"
+                    rx="5"
+                    fill="#2575fc"
+                  />
+                  <text
+                    x="300"
+                    y="60"
+                    text-anchor="middle"
+                    fill="white"
+                    font-weight="bold"
+                  >
+                    Controller
+                  </text>
+
+                  <rect
+                    x="200"
+                    y="130"
+                    width="200"
+                    height="50"
+                    rx="5"
+                    fill="#6a11cb"
+                  />
+                  <text
+                    x="300"
+                    y="160"
+                    text-anchor="middle"
+                    fill="white"
+                    font-weight="bold"
+                  >
+                    Service
+                  </text>
+
+                  <rect
+                    x="200"
+                    y="230"
+                    width="200"
+                    height="50"
+                    rx="5"
+                    fill="#8e44ad"
+                  />
+                  <text
+                    x="300"
+                    y="260"
+                    text-anchor="middle"
+                    fill="white"
+                    font-weight="bold"
+                  >
+                    Repository
+                  </text>
+
+                  <!-- 연결선 -->
+                  <line
+                    x1="300"
+                    y1="80"
+                    x2="300"
+                    y2="130"
+                    stroke="#333"
+                    stroke-width="2"
+                    stroke-dasharray="5,5"
+                  />
+                  <line
+                    x1="300"
+                    y1="180"
+                    x2="300"
+                    y2="230"
+                    stroke="#333"
+                    stroke-width="2"
+                    stroke-dasharray="5,5"
+                  />
+
+                  <!-- 설명 -->
+                  <text x="420" y="55" fill="#333" font-size="12">
+                    REST API 엔드포인트 제공
+                  </text>
+                  <text x="420" y="155" fill="#333" font-size="12">
+                    비즈니스 로직 처리
+                  </text>
+                  <text x="420" y="255" fill="#333" font-size="12">
+                    데이터 접근 계층
+                  </text>
+                </svg>
+              </div>
+            </div>
+
+            <div id="SampleCode" class="tabcontent">
+              <pre
+                style="
+                  background-color: #f5f5f5;
+                  padding: 15px;
+                  border-radius: 5px;
+                  overflow-x: auto;
+                "
+              >
+                    @RestController
+                    @RequestMapping("/api/users")
+                    public class UserController {
+                        
+                        private final UserService userService;
+                        
+                        @GetMapping
+                        public ResponseEntity&lt;List&lt;UserDto&gt;&gt; getAllUsers() {
+                            return ResponseEntity.ok(userService.findAll());
+                        }
+                        
+                        @GetMapping("/{id}")
+                        public ResponseEntity&lt;UserDto&gt; getUser(
+                                @PathVariable Long id) {
+                            return ResponseEntity.ok(userService.findById(id));
+                        }
+                        
+                        @PostMapping
+                        public ResponseEntity&lt;UserDto&gt; createUser(
+                                @RequestBody @Valid UserRequest request) {
+                            UserDto created = userService.create(request);
+                            return ResponseEntity
+                                .created(URI.create("/api/users/" + created.getId()))
+                                .body(created);
+                        }
+                        
+                        @PutMapping("/{id}")
+                        public ResponseEntity&lt;UserDto&gt; updateUser(
+                                @PathVariable Long id,
+                                @RequestBody @Valid UserRequest request) {
+                            return ResponseEntity.ok(userService.update(id, request));
+                        }
+                        
+                        @DeleteMapping("/{id}")
+                        public ResponseEntity&lt;Void&gt; deleteUser(@PathVariable Long id) {
+                            userService.delete(id);
+                            return ResponseEntity.noContent().build();
+                        }
+                    }
+                        </pre
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="icon">⚙️</span>
+            실무 Best Practice
+          </div>
+          <div class="card-body">
+            <button class="collapsible">통일된 응답 구조</button>
+            <div class="content">
+              <pre
+                style="
+                  background-color: #f5f5f5;
+                  padding: 15px;
+                  border-radius: 5px;
+                  overflow-x: auto;
+                "
+              >
+                    public class ApiResponse&lt;T&gt; {
+                        private boolean success;
+                        private T data;
+                        private String message;
+                        private String errorCode;
+                        
+                        // 성공 응답 생성
+                        public static &lt;T&gt; ApiResponse&lt;T&gt; success(T data) {
+                            return new ApiResponse&lt;T&gt;(true, data, null, null);
+                        }
+                        
+                        // 실패 응답 생성
+                        public static &lt;T&gt; ApiResponse&lt;T&gt; error(
+                            String message, String errorCode) {
+                            return new ApiResponse&lt;T&gt;(false, null, message, errorCode);
+                        }
+                    }
+                </pre
+              >
+            </div>
+
+            <button class="collapsible">전역 예외 처리</button>
+            <div class="content">
+              <pre
+                style="
+                  background-color: #f5f5f5;
+                  padding: 15px;
+                  border-radius: 5px;
+                  overflow-x: auto;
+                "
+              >
+                @RestControllerAdvice
+                public class GlobalExceptionHandler {
+                    
+                    @ExceptionHandler(ResourceNotFoundException.class)
+                    public ResponseEntity&lt;ApiResponse&lt;Void&gt;&gt; handleNotFound(
+                            ResourceNotFoundException ex) {
+                        return ResponseEntity
+                            .status(HttpStatus.NOT_FOUND)
+                            .body(ApiResponse.error(ex.getMessage(), "NOT_FOUND"));
+                    }
+                    
+                    @ExceptionHandler(MethodArgumentNotValidException.class)
+                    public ResponseEntity&lt;ApiResponse&lt;Void&gt;&gt; handleValidation(
+                            MethodArgumentNotValidException ex) {
+                        String errorMessage = ex.getBindingResult()
+                            .getFieldErrors().stream()
+                            .map(FieldError::getDefaultMessage)
+                            .collect(Collectors.joining(", "));
+                            
+                        return ResponseEntity
+                            .status(HttpStatus.BAD_REQUEST)
+                            .body(ApiResponse.error(errorMessage, "VALIDATION_FAILED"));
+                    }
+                }
+               </pre
+              >
+            </div>
+
+            <button class="collapsible">API 문서화</button>
+            <div class="content">
+              <p>Swagger/OpenAPI를 사용하여 API 문서를 자동으로 생성</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card" style="margin-top: 30px">
+        <div class="card-header" style="background-color: #2563eb">
+          <span class="icon">💼</span>
+          실무 & 면접 질문
+        </div>
+        <div class="card-body">
+          <div class="qa-section">
+            <div class="qa-card">
+              <div class="qa-question" style="text-align: center">
+                RESTful API와 REST API는 차이점은? <br />
+                <p style="color: #2196f3">[CLICK]</p>
+              </div>
+              <div class="qa-answer">
+                REST API는 REST 아키텍처 스타일을 따르는 API이며, RESTful API는
+                이를 좀 더 엄격하게 지킨 이상적인 구현입니다. <br />
+                <p style="color: #2196f3">[CLICK]</p>
+              </div>
+            </div>
+
+            <div class="qa-card">
+              <div class="qa-question" style="text-align: center">
+                HTTP 상태 코드 중 204 No Content는 언제 사용하나요? <br />
+                <p style="color: #2196f3">[CLICK]</p>
+              </div>
+              <div class="qa-answer">
+                주로 삭제(Delete) 요청 후 응답 본문이 필요 없을 때 사용됩니다.
+                처리 성공은 했지만 반환할 콘텐츠가 없음을 의미합니다.
+              </div>
+            </div>
+
+            <div class="qa-card">
+              <div class="qa-question" style="text-align: center">
+                @ControllerAdvice의 주요 역할은 무엇인가요? <br />
+                <p style="color: #2196f3">[CLICK]</p>
+              </div>
+              <div class="qa-answer">
+                전역 예외 처리를 통해 예외 발생 시 일관된 응답을 반환할 수
+                있도록 도와주는 기능입니다.
+              </div>
+            </div>
+
+            <div class="qa-card">
+              <div class="qa-question" style="text-align: center">
+                Spring에서 DTO를 사용하는 이유는? <br />
+                <p style="color: #2196f3">[CLICK]</p>
+              </div>
+              <div class="qa-answer">
+                직접 엔티티를 노출하는 것을 방지하고, 계층 간 명확한 책임 분리를
+                통해 보안과 유지보수를 용이하게 하기 위함입니다.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div
+        style="
+          background-color: #f7f9fc;
+          padding: 30px;
+          border-radius: 10px;
+          text-align: center;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        "
+      >
+        <h3 style="color: #2575fc">REST API</h3>
+        <p>&copy; 2025 sook. ver1.0</p>
+        <div>
+          <span style="margin: 0 10px; color: #666"
+            >최종 업데이트: 2025.04.23</span
+          >
+        </div>
+        <div style="margin-top: 15px; font-size: 0.9rem; color: #888">
+          이 문서는 REST API의 기본 개념과 실무 적용을 위해 제작되었습니다.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
